@@ -125,4 +125,27 @@ a{
     color: white;
     padding: 48px;
     margin-top: 48px;;
+    display: flex;
+}
+
+.hero--left{
+    width: 100%;
+}
+
+.hero--right{
+    width: 100%;
+}
+
+.hero__img{
+    background-image: url(../img/hero-ialaw-img.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 150%;
+    position: relative;
+    top: -15%;
+    right: -20%;
+}
+
+.hero__img > img{
+    max-width: 100%;
 }
