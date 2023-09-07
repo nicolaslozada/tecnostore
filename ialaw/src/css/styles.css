@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
 @font-face {
     font-family: 'Cocogoose';
     src: url('../fonts/cocogoose.ttf') format('ttf'),
@@ -7,6 +9,47 @@
     font-style: normal;
 }
 
-body{
-    font-family: 'Cocogoose';
+:root {
+    /* Colors */
+    --ialaw-blue-400: #011EF4;
+    --ialaw-blue-300: #5C70FE;
+    --ialaw-blue-200: #C2C9FF;
+    --ialaw-yellow-400: #FBBB02;
+    --ialaw-yellow-300: #FEE49A;
+    --black-400: #2D2D2E;
+    --black-300: #939395;
+    --gray-400: #E0E0E1;
+    --gray-300: #F2F2F2;
+    --gray-100: #F7F7F7;
+
+    /* Text Size */
+    --base: 1rem;
+    --factor:1.25;
+
+    --size-2: calc(var(--size-1) / var(--factor));
+    --size-1: calc(var(--base) / var(--factor));
+    --size0: var(--base);
+    --size1: calc(var(--base) * var(--factor));
+    --size2: calc(var(--size1) * var(--factor));
+    --size3: calc(var(--size2) * var(--factor));
+    --size4: calc(var(--size3) * var(--factor));
+    --size5: calc(var(--size4) * var(--factor));
+    --size6: calc(var(--size5) * var(--factor));
+
+  }
+
+body {
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    color: var(--black-400);
+    font-size: var(--base);
+}
+
+h1{
+    font-family: 'Cocogoose', 'Poppins', Arial, Helvetica, sans-serif;
+    font-size: var(--size4);
+}
+
+a{
+    color: var(--ialaw-blue-400);
+    font-size: var(--base);
 }
