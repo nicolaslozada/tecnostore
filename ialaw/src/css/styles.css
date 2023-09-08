@@ -174,6 +174,7 @@ ul > li {
 .menu {
     display: flex;
     align-items: center;
+    gap: 24px;
 }
 
 .menu__pages{
@@ -555,3 +556,149 @@ h3.services-page__item__title{
     font-weight: 700;
 }
 
+@media (max-width: 1200px) {
+    body{
+        gap: 48px;
+    }
+
+    .container{
+        width: 960px;
+    }    
+    h1 {
+        font-size: var(--size3);
+    }
+
+    h2 {
+        font-size: var(--size0);
+    }
+
+
+    .lead > p{
+        font-size: var(--size0);
+    }
+    
+    .services-card{
+        font-size: var(--size0);
+    }
+
+    .services__list {
+        gap: 16px 16px;
+    }
+
+    .areas-list{
+        gap: 16px;
+    }
+    .areas-card{
+        height: 160px;
+        width: 112px;
+    }
+    .areas-card--double {
+        width: 256px;
+    }
+
+    .contact__list {
+        gap: 16px;
+    }
+
+    .contact-card {
+        width: 276px;
+    }
+  }  
+
+  @media (max-width: 1024px) {
+    .container{
+        width:90%;
+    }
+
+    .hero--right {
+        width: 0;
+    }
+
+    .services__list {
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
+    .areas-card--double {
+        width: 448px;
+    }
+
+    .ialaw-decoration {
+        display: none;
+    }
+
+    .work-with-us {
+        display: flex;
+        gap: 16px;
+        flex-direction: column;
+    }
+
+    .work-with-us > .section-title {
+        text-align: left;
+    }
+
+}
+@media (max-width:768px){
+    h1 {
+        font-size: var(--size2);
+    }
+
+    .hero {
+        padding: 24px;
+    }
+
+    .lead {
+        gap: 16px;
+    }
+
+    .services__list {
+        grid-template-columns: 1fr;
+    }
+
+    .areas__list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 100%;
+    }
+
+    .areas-card--double {
+        width: unset;
+    }
+
+    .areas-card{
+        width: unset;
+    }
+
+
+    .services-card {
+        height: 44px;
+    }
+
+
+    .footer__top {
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .footer__top__right{
+        align-self: self-start;
+    }
+
+    .footer__bottom__info {
+        flex-direction: column;
+    }
+
+    .footer__bottom__info__left {
+        flex-direction: column;
+    }
+    .footer__bottom__info__left > div {
+        width: 100%;
+        }
+
+    .footer__bottom__info__right {
+        text-align: left;
+        margin-top: 16px;
+    }
+
+    
+}
