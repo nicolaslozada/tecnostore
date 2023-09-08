@@ -72,6 +72,8 @@ h2{
 h3{
     font-family: 'Cocogoose', 'Poppins', Arial, Helvetica, sans-serif;
     font-size: var(--size2);
+    margin:0;
+    padding:0;
 }
 
 a{
@@ -97,19 +99,18 @@ p{
     font-size: var(--base);
     padding: var(--size-1) var(--base) ;
     background-color: var(--ialaw-blue-400);
-    color:white !important;
     font-weight: 700;
     display: inline-flex;
     border-radius: var(--base);
-}
-.button > a{
     text-decoration: none !important;
-    font-size: inherit;
+    color:white;
 }
+
 .button--negative{
     background-color: white;
     color: var(--ialaw-blue-400);
 }
+
 
 .button--size1{
     font-size: var(--size1);
@@ -353,10 +354,68 @@ p{
 
 .footer{
     background-color: var(--ialaw-blue-400);
+    color: white;
     padding-top: 48px;
     padding-bottom: 48px;
 }
 
+.footer__top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .footer__title{
     color: white;
+}
+
+.footer__bottom__nav{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px; 
+    margin: 0;
+    padding: 0;
+}
+
+.footer__bottom__nav > li{
+    list-style: none;
+    margin:0;
+    padding:0;
+}
+
+.footer__bottom__info{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom:24px;
+    border-bottom: 1px solid var(--ialaw-blue-200);
+}
+.footer__bottom__info__left{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.footer__bottom__info__left > div{
+    width:40%;
+}
+
+.footer__bottom__contact-bit > span{
+    font-size: var(--size-1);
+    color: var(--ialaw-blue-200);
+    text-transform: uppercase;
+    margin-bottom: 4px;
+}
+
+.footer__bottom__info__right{
+    text-align: right;
+    color: var(--ialaw-blue-200);
+}
+
+.footer__bottom__legal > p{
+    font-size: var(--size-1);
+    color: var(--ialaw-blue-200);
+}
+.footer__bottom__legal > p > a{
+    font-size: inherit;
+    color: inherit;
 }
