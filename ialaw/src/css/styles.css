@@ -89,6 +89,7 @@ a{
     font-size: var(--base);
     margin:0;
     padding:0;
+    text-decoration:none;
 }
 
 p{
@@ -119,6 +120,12 @@ p{
 .button--negative{
     background-color: white;
     color: var(--ialaw-blue-400);
+}
+
+.button--outlined{
+    background-color: transparent;
+    border: 1px solid var(--ialaw-blue-400);    
+    color: var(--ialaw-blue-400)
 }
 
 
@@ -161,6 +168,8 @@ p{
     gap:16px;
     font-weight: 700;
 }
+
+
 
 .menu__rrss{
     display: flex;
@@ -449,4 +458,24 @@ section.services{
 .footer__bottom__legal > p > a{
     font-size: inherit;
     color: inherit;
+}
+
+/* SERVICES PAGE */
+.services-page__list{
+    display: flex;
+    flex-direction: column;
+    gap:64px;
+}
+.input--search{
+    background-color: var(--gray-100);
+    border: 0;
+    border-radius: 16px;
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    padding: 16px;
+    font-size: var(--base);
+    width: 50%;
+}
+
+.input--search::after{
+    content: url(../icons/nuevas-tecnologias.svg);
 }
