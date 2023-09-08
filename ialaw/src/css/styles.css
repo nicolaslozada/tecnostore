@@ -45,10 +45,17 @@ body {
     font-size: 16px;
     margin:0;
     padding:0;
+    display: flex;
+    flex-direction: column;
+    gap:96px;
 }
 
 section{
-    margin-top: 48px;
+    margin-top: 32px;
+}
+
+.section-title{
+    margin-bottom:24px;
 }
 
 
@@ -76,6 +83,7 @@ h3{
     padding:0;
 }
 
+
 a{
     color: var(--ialaw-blue-400);
     font-size: var(--base);
@@ -87,6 +95,8 @@ p{
     margin:0;
     padding:0;
 }
+
+
 
 /* Layout */
 .container{
@@ -136,6 +146,7 @@ p{
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    margin-bottom:48px;
 }
 
 .menu {
@@ -165,6 +176,7 @@ p{
     color: white;
     padding: 48px;
     display: flex;
+    margin-bottom:60px;
 }
 
 .hero--left{
@@ -181,7 +193,7 @@ p{
     background-repeat: no-repeat;
     height: 150%;
     position: relative;
-    top: -15%;
+    top: -30%;
     right: -20%;
 }
 
@@ -190,16 +202,16 @@ p{
 }
 
 /* Lead */
-.lead-section {
-    margin:48px auto;
-}
+
 .lead{
     display: flex;
     gap:32px;
+    padding-top: 32px;
 }
 
 .lead > .section-title{
     text-align: right;
+    margin-bottom: 0;
 }
 
 .lead > p {
@@ -207,6 +219,11 @@ p{
 }
 
 /* Services */
+
+section.services{
+    margin-top:0;
+}
+
 .services__list{
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr; 
@@ -234,6 +251,14 @@ p{
     font-weight: 700;
     border-radius: 16px;
 }
+
+/* .sub-section-title{
+    margin-top: 48px;
+    margin-bottom: 24px;
+    color: var(--ialaw-blue-400);
+    font-family: 'Poppins', Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+} */
 
 .areas__list{
     display: flex;
@@ -293,6 +318,7 @@ p{
 
 .work-with-us > .section-title{
     text-align: right;
+    margin-bottom: 0;
 }
 .work-with-us > p{
     align-self: center;
@@ -363,6 +389,7 @@ p{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    margin-bottom: 48px;
 }
 
 .footer__title{
@@ -373,7 +400,7 @@ p{
     display: flex;
     flex-wrap: wrap;
     gap: 24px; 
-    margin: 0;
+    margin: 0 0 24px 0;
     padding: 0;
 }
 
@@ -409,11 +436,15 @@ p{
 .footer__bottom__info__right{
     text-align: right;
     color: var(--ialaw-blue-200);
+    display: flex;
+    flex-direction: column;
+    gap:8px
 }
 
 .footer__bottom__legal > p{
     font-size: var(--size-1);
     color: var(--ialaw-blue-200);
+    margin-top:24px;
 }
 .footer__bottom__legal > p > a{
     font-size: inherit;
