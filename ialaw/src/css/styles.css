@@ -419,6 +419,11 @@ section.services{
     padding:0;
 }
 
+.footer__bottom__nav > li > a{
+    color: white;
+    text-decoration: underline;
+}
+
 .footer__bottom__info{
     display: flex;
     justify-content: space-between;
@@ -527,6 +532,11 @@ section.services{
 }
 
 .team-person__perks__item > span{
+    font-weight: 700;
+}
+
+h3.services-page__item__title{
+    font-size: var(--base);
     font-weight: 700;
 }
 
