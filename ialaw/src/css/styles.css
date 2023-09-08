@@ -39,6 +39,11 @@
   }
 
 /* Ajustes Generales */
+
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: 'Poppins', Arial, Helvetica, sans-serif;
     color: var(--black-400);
@@ -97,6 +102,15 @@ p{
     padding:0;
 }
 
+ul {
+    padding:0;
+    margin:0;
+}
+
+ul > li {
+    list-style: none;
+}
+
 
 
 /* Layout */
@@ -115,6 +129,7 @@ p{
     border-radius: var(--base);
     text-decoration: none !important;
     color:white;
+    cursor: pointer;
 }
 
 .button--negative{
@@ -374,7 +389,7 @@ section.services{
     background-color: #C4302B;
 }
 .contact-card--instagram{
-    background-color: E1306C;
+    background-color: #E1306C;
 }
 
 .contact-card > a{

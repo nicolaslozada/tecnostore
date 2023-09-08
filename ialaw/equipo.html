@@ -1,6 +1,7 @@
 <html>
     <head>
         <link rel="stylesheet" href="src/css/styles.css">
+        <link rel="stylesheet" href="src/css/modal.css">
     </head>
     <body>
         <div class="team-page container">
@@ -16,7 +17,7 @@
                                     <li><a href="equipo.html">Equipo Legal</a></li>
                                     <li><a href="servicios.html">Servicios</a></li>
                                     <li><a href="trabaja-con-nosotros.html">Trabaja con nosotros</a></li>
-                                    <li><a href="" class="button">Contáctanos</a></li>
+                                    <li><a class="button openModalBtn">Contáctanos</a></li>
                                 </ul>
                                 <ul class="menu__rrss">
                                     <li><a href="/instagram"><img src="src/icons/logo-instagram.svg" alt="Instagram"/></a></li>
@@ -170,7 +171,7 @@
                         <p>Ponte en contacto con nosotros para poder ayudarte</p>
                     </div>
                     <div class="footer__top__right">
-                        <a href="#" class="button button--negative button--size1">Contáctanos</a>
+                        <a class="button button--negative button--size1 openModalBtn">Contáctanos</a>
                     </div>
                 </div>
                 <div class="footer__bottom">
@@ -207,5 +208,80 @@
                 </div>
             </div>
         </section>
+
+        <section class="modal hidden">
+            <div class="modal__header">
+                <h3>Contáctanos</h3>
+                <button class="btn-close"><img src="src/icons/close.svg" /></button>
+            </div>
+            <div>
+                <div class="modal__email">
+                    <p>Para ponerte en contacto con nosotros, escríbenos a</p>
+                    <p class="big"> contacto@iriartelaw.com</p>
+                </div> 
+                <div class="modal__rrss">
+                    <p>También puedes contactarnos por nuestras redes sociales</p>
+                    <ul>
+                        <li>
+                            <div class="contact-card contact-card--twitter contact-card--modal">
+                                <a href="#">
+                                    <img src="src/icons/logo-X-white.svg" alt="Twitter"/>
+                                    <span>@ialaw</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-card contact-card--facebook contact-card--modal">
+                                <a href="#">
+                                    <img src="src/icons/logo-facebook-white.svg" alt="Facebook"/>
+                                    <span>Facebook</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-card contact-card--linkedin contact-card--modal">
+                                <a href="#">
+                                    <img src="src/icons/logo-linkedin-white.svg" alt="Linkedin"/>
+                                    <span>Linkedin</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-card contact-card--youtube contact-card--modal">
+                                <a href="#">
+                                    <img src="src/icons/logo-youtube-white.svg" alt="YouTube"/>
+                                    <span>@IriarteLaw</span>
+                                </a>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="contact-card contact-card--instagram contact-card--modal">
+                                <a href="#">
+                                    <img src="src/icons/logo-instagram-white.svg" alt="Instagram"/>
+                                    <span>@ialaw</span>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div> 
+                <div class="modal__on-premise">
+                    <p>O también puedes contactarnos por teléfono o visitarnos en nuestras oficinas:</p>
+                    <div class="footer__bottom__contact-bit contact-bit--modal">
+                        <span>Teléfono</span>
+                        <p>+51 1 3996491</p>
+                    </div>
+                    <div class="footer__bottom__contact-bit contact-bit--modal">
+                        <span>Dirección</span>
+                        <p>Enrique Palacios 360, ofc. 612. Miraflores</p>
+                    </div>
+
+                </div>
+            </div>
+
+          </section>
+          
+          <div class="overlay hidden"></div>
+          <script src="src/js/modal.js"></script>    
+
     </body>
 </html>
