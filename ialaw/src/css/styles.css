@@ -322,6 +322,15 @@ section.services{
     text-transform: uppercase;
 } */
 
+.services-page__item > ul {
+    margin-left:24px;
+}
+
+.services-page__item > ul > li {
+    list-style: disc;
+    margin-bottom: 4px;
+}
+
 .services-page__item > a.button{
     margin-top: 24px;
 }
@@ -662,7 +671,17 @@ h3.services-page__item__title{
     }
 
     .hero--right {
-        width: 0;
+        width: 100%;
+    }
+
+    .hero__img{
+        background-image: url(../img/hero-ialaw-img.png);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 150%;
+        position: relative;
+        top:0;
+        right: -20%;
     }
 
     .button-menu{
@@ -739,6 +758,10 @@ h3.services-page__item__title{
 
     .hero {
         padding: 24px;
+    }
+
+    .hero--right {
+        width: 0;
     }
 
     .lead {
