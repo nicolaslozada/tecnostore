@@ -4,7 +4,6 @@
         <link rel="stylesheet" href="src/css/modal.css">
     </head>
     <body>
-
         <section class="header">
             <div class="navigation">
                 <div class="container">
@@ -12,7 +11,8 @@
                         <div class="ialaw-logo">
                             <a href="index.html"><img src="src/icons/ialaw-logo.svg" alt="IA LAW"/></a>
                         </div>
-                        <div class="menu">
+                        <!-- regular menu -->
+                        <div class="menu ">
                             <ul class="menu__pages">
                                 <li><a href="equipo.html">Equipo Legal</a></li>
                                 <li><a href="servicios.html">Servicios</a></li>
@@ -27,16 +27,36 @@
                                 <li><a href="/facebook"><img src="src/icons/logo-facebook.svg" alt="Facebook"/></a></li>
                             </ul>
                         </div>
+                        <!-- regular menu -->
+
+                        
+                        <!-- mobile menu -->
+                        <div class="mobile-menu-container">
+                            <button class="button button-menu btnDropdown"> Menu <img src="src/icons/caret-down.png" height="16" width="16"/> </button>
+                            <div class="menu-mobile dropdownBox hidden">
+                                <ul class="menu__pages">
+                                    <li><a href="equipo.html">Equipo Legal</a></li>
+                                    <li><a href="servicios.html">Servicios</a></li>
+                                    <li><a href="trabaja-con-nosotros.html">Trabaja con nosotros</a></li>
+                                    <li><a class="button openModalBtn">Contáctanos</a></li>
+                                    
+                                </ul>
+                                <ul class="menu__rrss">
+                                    <li><a href="/instagram"><img src="src/icons/logo-instagram.svg" alt="Instagram"/></a></li>
+                                    <li><a href="/twitter"><img src="src/icons/logo-X.svg" alt="Twitter"/></a></li>
+                                    <li><a href="/youtube"><img src="src/icons/logo-youtube.svg" alt="YouTube"/></a></li>
+                                    <li><a href="/facebook"><img src="src/icons/logo-facebook.svg" alt="Facebook"/></a></li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                </div>
             </div>
             <div class="container">
                 <div class="hero">
                     <div class="hero--left">
-                        <img src="src/icons/logo-instagram.svg" alt="Instagram"/>
                         <p class="hero__pretitle">IALAW, colectivo de abogados</p>
                         <h1 class="hero__title">Somos tus aliados en el desarrollo de negocios y protección de libertades en el mundo digital.</h1>
-                        <a class="button button--negative button--size1 openModalBtn">Contáctanos</a>
+                        <div><a class="button button--negative button--size1 openModalBtn">Contáctanos</a></div>
                     </div>
                     <div class="hero--right">
                         <div class="hero__img"></div>
@@ -361,6 +381,7 @@
           
           <div class="overlay hidden"></div>
           <script src="src/js/modal.js"></script>
+          <script src="src/js/dropdown.js"></script>
 
     </body>
 </html>

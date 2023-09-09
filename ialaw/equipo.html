@@ -7,17 +7,39 @@
         <div class="team-page container">
             <section class="header">
                 <div class="navigation">
-                    <div class="container">
-                        <div class="nav">
-                            <div class="ialaw-logo">
-                                <a href="index.html"><img src="src/icons/ialaw-logo.svg" alt="IA LAW"/></a>
-                            </div>
-                            <div class="menu">
+                    <div class="nav">
+                        <div class="ialaw-logo">
+                            <a href="index.html"><img src="src/icons/ialaw-logo.svg" alt="IA LAW"/></a>
+                        </div>
+                        <!-- regular menu -->
+                        <div class="menu ">
+                            <ul class="menu__pages">
+                                <li><a href="equipo.html">Equipo Legal</a></li>
+                                <li><a href="servicios.html">Servicios</a></li>
+                                <li><a href="trabaja-con-nosotros.html">Trabaja con nosotros</a></li>
+                                <li><a class="button openModalBtn">Contáctanos</a></li>
+                                
+                            </ul>
+                            <ul class="menu__rrss">
+                                <li><a href="/instagram"><img src="src/icons/logo-instagram.svg" alt="Instagram"/></a></li>
+                                <li><a href="/twitter"><img src="src/icons/logo-X.svg" alt="Twitter"/></a></li>
+                                <li><a href="/youtube"><img src="src/icons/logo-youtube.svg" alt="YouTube"/></a></li>
+                                <li><a href="/facebook"><img src="src/icons/logo-facebook.svg" alt="Facebook"/></a></li>
+                            </ul>
+                        </div>
+                        <!-- regular menu -->
+
+                        
+                        <!-- mobile menu -->
+                        <div class="mobile-menu-container">
+                            <button class="button button-menu btnDropdown"> Menu <img src="src/icons/caret-down.png" height="16" width="16"/> </button>
+                            <div class="menu-mobile dropdownBox hidden">
                                 <ul class="menu__pages">
                                     <li><a href="equipo.html">Equipo Legal</a></li>
                                     <li><a href="servicios.html">Servicios</a></li>
                                     <li><a href="trabaja-con-nosotros.html">Trabaja con nosotros</a></li>
                                     <li><a class="button openModalBtn">Contáctanos</a></li>
+                                    
                                 </ul>
                                 <ul class="menu__rrss">
                                     <li><a href="/instagram"><img src="src/icons/logo-instagram.svg" alt="Instagram"/></a></li>
@@ -281,7 +303,8 @@
           </section>
           
           <div class="overlay hidden"></div>
-          <script src="src/js/modal.js"></script>    
+          <script src="src/js/modal.js"></script>   
+          <script src="src/js/dropdown.js"></script> 
 
     </body>
 </html>

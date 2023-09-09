@@ -6,6 +6,7 @@ const closeModalBtn = document.querySelector(".btn-close");
 const openModal = function () {
     modal.classList.remove("hidden");
     overlay.classList.remove("hidden");
+    dropdownBox.classList.add("hidden");
 };
 
 const closeModal = function () {
