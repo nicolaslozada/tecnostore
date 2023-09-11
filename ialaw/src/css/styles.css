@@ -591,6 +591,10 @@ section.services{
     gap: 24px 24px;
 }
 
+.team-person__info--left > img {
+    border-radius: 16px;
+}
+
 .team-person__perks{
     display: flex;
     gap:16px;
