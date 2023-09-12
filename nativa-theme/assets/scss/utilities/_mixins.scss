@@ -1,0 +1,110 @@
+@forward '../base/fonts';
+@forward '../utilities/variables';
+
+// Font:
+@mixin font($color, $size, $weight, $name) {
+  color: $color;
+  font-size: $size;
+  font-weight: $weight;
+  font-family: $name;
+  line-height: 1.2;
+}
+
+// Button
+@mixin button($bg, $border) {
+  @include dflex(center, center);
+  background-color: $bg;
+  border: $border;
+  cursor: pointer;
+  // border-radius: 100px;
+  gap: 12px;
+  line-height: 1;
+  text-decoration: none;
+  width: fit-content;
+}
+
+// Flex
+@mixin dflex($align: '', $justify: '') {
+  display: flex;
+  @if $justify != '' {
+    justify-content: $justify;
+  } @else {
+    justify-content: space-between;
+  }
+
+  @if $align != '' {
+    align-items: $align;
+  } @else {
+    align-items: center;
+  }
+}
+
+// Grid
+@mixin dgrid($number) {
+  display: grid;
+  grid-template-columns: repeat($number, 1fr);
+}
+
+// Background
+@mixin bg($position, $repeat, $size) {
+  background-position: $position;
+  background-repeat: $repeat;
+  background-size: $size;
+}
+
+// Image
+@mixin img($width: '') {
+  display: block;
+  @if $width != '' {
+    width: $width;
+  } @else {
+    width: 100%;
+  }
+}
+
+@mixin object($fit: '') {
+  object-position: center;
+  @if $fit != '' {
+    object-fit: $fit;
+  } @else {
+    object-fit: cover;
+  }
+}
+
+@mixin ellipsis($number) {
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $number;
+}
+
+$breakpoint: (
+  mobile: 40em,
+  tablet: 768px,
+  desktop-xs: 1280px,
+  desktop-sm: 1360px,
+  desktop: 1440px,
+);
+
+@mixin maxquery($display) {
+  @each $key, $value in $breakpoint {
+    //  defining min-width
+    @if ($display == $key) {
+      @media (max-width: $value) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin minquery($display) {
+  @each $key, $value in $breakpoint {
+    //  defining max-width
+    @if ($display == $key) {
+      @media (min-width: $value) {
+        @content;
+      }
+    }
+  }
+}

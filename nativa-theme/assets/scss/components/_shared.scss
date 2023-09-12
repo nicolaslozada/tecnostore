@@ -1,0 +1,34 @@
+@use '../utilities/mixins' as *;
+
+.shared {
+  @include dflex();
+  border-radius: 16px;
+  background: 
+    linear-gradient(87deg, #0E137F -70%, #34C3FC 105%, #5CCFFC 20%);
+  flex-direction: column;
+  padding: 16px 24px;
+  gap: 16px;
+  &__logo {
+    @include img(81px);
+    img {
+      @include img();
+    }
+  }
+  &__text {
+    @include font($white, 16px, 500, $fontDM);
+    letter-spacing: 0.5px;
+    padding: 0 8px;
+    text-align: center;
+    width: 177px;
+    margin: 0 auto;
+  }
+  &__rrss {
+    @include dflex();
+    gap: 16px;
+    a {
+      color: $white;
+      font-size: 24px;
+      text-decoration: none;
+    }
+  }
+}

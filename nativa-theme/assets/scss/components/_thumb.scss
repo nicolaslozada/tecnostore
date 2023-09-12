@@ -1,0 +1,82 @@
+@use '../utilities/mixins' as *;
+
+.thumb {
+  @include dflex(flex-start);
+  gap: 8px;
+  text-decoration: none;
+  width: 100%;
+  &__img {
+    @include img(200px);
+    border-radius: 8px;
+    height: 96px;
+    overflow: hidden;
+    text-decoration: none;
+    img {
+      @include img();
+      @include object();
+      color: $white;
+      height: 100%;
+    }
+  }
+  &__content {
+    @include dflex(flex-start);
+    flex-direction: column;
+    flex: 1;
+    gap: 8px;
+    padding: 0 8px;
+  }
+  &__title {
+    @include font($gray, 14px, 700, $fontDM);
+    display: block;
+    text-decoration: none;
+  }
+  &__description {
+    @include font($gray, 16px, 400, $fontDM);
+  }
+  &__link {
+    @include font($iris, 16px, 700, $fontDM);
+    text-decoration: none;
+  }
+
+  &--white {
+    @extend .thumb;
+    .thumb {
+      &__content {
+        .date {
+          color: $white;
+        }
+      }
+      &__title {
+        color: $white;
+      }
+    }
+    @include maxquery(mobile) {
+      flex-direction: column;
+      .thumb {
+        &__img {
+          width: 142px;
+        }
+        &__title {
+          @include ellipsis(2);
+        }
+      }
+    }
+  }
+
+  @include maxquery(tablet) {
+    flex-direction: column;
+    &__img {
+      width: 100%;
+    }
+  }
+
+  @include maxquery(mobile) {
+    min-width: 130px;
+    &__img {
+      flex: 1;
+      img {
+        @include ellipsis(4);
+      }
+    }
+  }
+}

@@ -1,0 +1,33 @@
+@use '../utilities/mixins' as *;
+
+.date {
+  @include font($gray, 11px, 400, $fontDM);
+  width: fit-content;
+  &__category {
+    @include font($black, 10px, 700, $fontDM);
+    display: inline-block;
+    text-transform: uppercase;
+    text-align: center;
+    text-decoration: none;
+    &--white {
+      @extend .date__category;
+      color: $white;
+    }
+    &--red {
+      @extend .date__category;
+      color: $red;
+    }
+    &--lila {
+      @extend .date__category;
+      color: $lila;
+    }
+    &--iris {
+      @extend .date__category;
+      color: $iris;
+    }
+    &--green {
+      @extend .date__category;
+      color: $green;
+    }
+  }
+}

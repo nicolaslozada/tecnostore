@@ -1,0 +1,33 @@
+@use '../utilities/mixins' as *;
+
+.btn {
+  &__rrss {
+    @include font($white, 16px, 400, $fontDM);
+    @include dflex(center, center);
+    border-radius: 16px;
+    gap: 8px;
+    padding: 10px 16px;
+    text-align: center;
+    text-decoration: none;
+    width: fit-content;
+    i {
+      font-size: 24px;
+    }
+    &--twt {
+      @extend .btn__rrss;
+      background-color: $black;
+    }
+    &--fb {
+      @extend .btn__rrss;
+      background-color: #3B5998;
+    }
+    &--ytb {
+      @extend .btn__rrss;
+      background-color: #C4302B;
+    }
+    &--ig {
+      @extend .btn__rrss;
+      background-color: #C71BA5;
+    }
+  }
+}

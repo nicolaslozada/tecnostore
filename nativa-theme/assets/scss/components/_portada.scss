@@ -1,0 +1,13 @@
+@use '../utilities/mixins' as *;
+
+.portada {
+  &--category {
+    background-color: $iris;
+    .container {
+      background-position: right bottom;
+      background-repeat: no-repeat;
+      background-size: 196px;
+      padding: 40px 0;
+    }
+  }
+}
