@@ -1,0 +1,150 @@
+@use '../utilities/mixins' as *;
+
+.title {
+  &--heading {
+    @include dflex(flex-start);
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    h2 {
+      @include font($black, 48px, 700, $fontDM);
+      @include maxquery(mobile) {
+        font-size: 28px;
+      }
+    }
+    h4 {
+      @include font($black, 19px, 400, $fontDM);
+    }
+  }
+  &--error {
+    display: block;
+    color: #858585;
+  }
+}
+
+.page {
+  &__content {
+    @include dflex(flex-start);
+    gap: 24px;
+    width: 100%;
+  }
+  &__container {
+    @include dflex(flex-start);
+    flex-direction: column;
+    gap: 24px;
+  }
+  &__description {
+    flex: 1;
+    width: 100%;
+    p + p {
+      margin-top: 20px;
+    }
+  }
+  &__link {
+    @include dflex(center, flex-start);
+    @include font(#5D5FEF, 19px, 700, $fontDM);
+    gap: 8px;
+    text-decoration: none;
+    i {
+      font-size: 14px;
+    }
+  }
+  &__img {
+    border-radius: 16px;
+    flex: 1;
+    overflow: hidden;
+    @include img();
+    img {
+      @include img();
+      margin: 0 auto;
+    }
+    &--somos {
+      @extend .page__img;
+      img {
+        @include img(351px);
+        @include maxquery(mobile) {
+          @include img(264px);
+        }
+      }
+    }
+  }
+  &__rrss {
+    @include dflex(flex-start);
+    flex-direction: column;
+    gap: 8px;
+    .btn__rrss {
+      width: fit-content;
+      i {
+        color: $white;
+      }
+    }
+  }
+  &--blue {
+    background-color: #140036;
+  }
+
+  @include maxquery(tablet) {
+    &__content {
+      align-items: center;
+      flex-direction: column;
+      gap: 32px;
+      &.programacion {
+        flex-direction: column-reverse;
+      }
+    }
+  }
+}
+
+.team {
+  @include dflex(flex-start);
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+  h5 {
+    @include font(#6B6B6B, 16px, 400, $fontDM);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  h4 {
+    @include font($black, 19px, 400, $fontDM);
+  }
+}
+
+.group {
+  &--team {
+    @include dgrid(2);
+    gap: 8px 24px;
+    @include maxquery(mobile) {
+      @include dgrid(1);
+    }
+  }
+}
+
+
+.live {
+  &__head {
+    @include dflex(center);
+    width: 100%;
+    .title--heading {
+      h2 {
+        color: $white;
+      }
+    }
+    @include maxquery(mobile) {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: 24px;
+    }
+  }
+  &__title {
+    @include dflex(center, flex-start);
+    gap: 24px;
+  }
+  &__frame {
+    @include img();
+    img {
+      @include img();
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "sela",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "w": "sass --watch --update --no-source-map assets/scss/general.scss:assets/css/general.css",
+    "sass-dev": "sass --watch --update --no-source-map --style=expanded general.scss general.css",
+    "sass-prod": "sass --no-source-map --style=compressed assets/scss:assets/css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.56.1"
+  }
+}

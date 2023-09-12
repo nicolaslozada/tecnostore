@@ -1,0 +1,128 @@
+@use '../utilities/mixins' as *;
+
+.card {
+  @include dflex(flex-start, flex-start);
+  flex-direction: column;
+  gap: 16px;
+  text-decoration: none;
+  flex: 1;
+  &__img {
+    @include img();
+    height: 180px;
+    border-radius: 8px;
+    text-decoration: none;
+    overflow: hidden;
+    img {
+      @include img();
+      @include object();
+      color: $white;
+      height: 100%;
+    }
+  }
+  &__content {
+    @include dflex(flex-start, flex-start);
+    flex-direction: column;
+    gap: 8px;
+    padding: 0 8px;
+  }
+  &__title {
+    @include font($white, 16px, 700, $fontDM);
+    text-decoration: none;
+  }
+  &__description {
+    @include font($white, 16px, 700, $fontDM);
+    @include ellipsis(2);
+  }
+
+  &--white {
+    @extend .card;
+    .card {
+      &__content {
+        .date {
+          color: $white;
+        }
+      }
+      &__title {
+        @include ellipsis(2);
+      }
+    }
+  }
+
+  &--principal {
+    @extend .card;
+    text-decoration: none;
+    .card {
+      &__title {
+        @include font($white, 25px, 700, $fontDM);
+        display: block;
+        margin-bottom: 16px;
+      }
+      &__img {
+        @include img(713px);
+        height: 428px;
+      }
+    }
+    & ~ .group--card {
+      @include dgrid(3);
+    }
+  }
+
+  &--min {
+    @extend .card;
+    max-width: 184px;
+    .card {
+      &__img {
+        height: 144px;
+      }
+      &__content {
+        min-height: 140px;
+      }
+      &__title {
+        @include font($black, 16px, 700, $fontDM);
+        @include ellipsis(4);
+      }
+    }
+    .date {
+      color: $gray;
+    }
+  }
+
+  @include maxquery(tablet) {
+    &--principal {
+      flex: unset;
+      .card {
+        &__img {
+          width: 100%;
+        }
+      }
+    }
+
+    &--min {
+      max-width: unset;
+      .card {
+        &__content {
+          min-height: unset;
+        }
+      }
+    }
+  }
+  
+  @include maxquery(mobile) {
+    &__img {
+      height: 96px;
+    }
+    &__title {
+      @include ellipsis(2);
+    }
+    &--principal {
+      & ~ .group--card {
+        @include dgrid(1);
+        .card {
+          &__title {
+            @include ellipsis(4);
+          }
+        }
+      }
+    }
+  }
+}
