@@ -1,0 +1,22 @@
+@use '../utilities/mixins' as *;
+
+.title {
+  &--heading {
+    @include dflex(flex-start);
+    flex-direction: column;
+    gap: 24px;
+    h2 {
+      @include font($black, 48px, 700, $fontDM);
+      @include maxquery(mobile) {
+        font-size: 28px;
+      }
+    }
+    h4 {
+      @include font($black, 19px, 400, $fontDM);
+    }
+  }
+  &--error {
+    display: block;
+    color: #858585;
+  }
+}

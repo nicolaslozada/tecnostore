@@ -1,0 +1,47 @@
+@use '../utilities/mixins' as *;
+
+.container {
+  &__category {
+    padding: 8px 16px;
+  }
+  &__tag {
+    max-width: 910px;
+    padding: 8px 16px;
+    &--gray {
+      .tag {
+        &__item {
+          background-color: $gray4;
+          color: $black;
+        }
+      }
+    }
+  }
+}
+
+.category {
+  @include dflex(center, flex-start);
+  gap: 8px;
+  &__title {
+    @include font($white, 28px, 700, $fontDM);
+  }
+  &__icon {
+    @include img(24px);
+  }
+}
+
+.tag {
+  @include dflex(center, flex-start);
+  gap: 8px 19px;
+  flex-wrap: wrap;
+  &__item {
+    @include font($white, 13px, 700, $fontDM);
+    border: 1px solid rgba(255, 255, 255, 0.30);
+    border-radius: 20px;
+    padding: 4px 8px;
+    letter-spacing: 0.1px;
+    text-decoration: none;
+    b {
+      opacity: 0.6;
+    }
+  }
+}

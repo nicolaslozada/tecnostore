@@ -1,0 +1,59 @@
+@use '../utilities/mixins' as *;
+
+.jumbotron {
+  @include dflex(flex-end, flex-start);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  min-height: 500px;
+  padding: 48px 0;
+  .date {
+    color: $white;
+  }
+  &__content {
+    @include dflex(flex-start);
+    gap: 8px;
+    flex-direction: column;
+    padding: 0 8px;
+    width: 60%;
+  }
+  &__title {
+    @include font($white, 48px, 700, $fontDM);
+    line-height: 1.1;
+    text-decoration: none;
+  }
+  &__description {
+    p {
+      @include font($white, 16px, 400, $fontDM);
+      @include ellipsis(unset);
+      line-height: 1.4;
+    }
+  }
+  @include maxquery(tablet) {
+    min-height: 268px;
+    padding: 32px 0;
+    &__content {
+      width: 100%;
+    }
+    &__title {
+      font-size: 28px;
+    }
+    &__description {
+      p {
+        @include ellipsis(3);
+      }
+    }
+  }
+
+  @include maxquery(mobile) {
+    min-height: 180px;
+    padding: 8px 0;
+    &__title {
+      font-size: 19px;
+    }
+    &__description {
+      display: none;
+    }
+  }
+}

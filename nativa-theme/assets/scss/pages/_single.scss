@@ -1,0 +1,104 @@
+@use '../utilities/mixins' as *;
+
+.single {
+  @include dflex(flex-start, flex-start);
+  gap: 16px;
+  margin-top: 40px;
+  &__content {
+    flex: 3;
+    .title--heading {
+      margin-top: 40px;
+    }
+  }
+  &__subtitle {
+    @include font($gray, 23px, 400, $fontDM);
+    margin: 40px 0;
+  }
+  &__description {
+    @include font($gray, 19px, 400, $fontDM);
+    p {
+      @include font($gray, 19px, 400, $fontDM);
+      line-height: 1.4;
+      margin: 20px 0;
+    }
+  }
+  &__img {
+    @include img();
+    margin: 40px 0;
+    img {
+      @include img();
+    }
+  }
+  &__section {
+    margin: 40px 0;
+    h3 {
+      @include font($black, 19px, 700, $fontDM);
+      margin-bottom: 40px;
+    }
+    .card__title {
+      color: $gray;
+    }
+    .news__cards {
+      @include dgrid(3);
+    }
+  }
+  &__relacionadas {
+    .card {
+      &__content {
+        .date {
+          color: $black;
+        }
+      }
+      &__title {
+        color: $black;
+      }
+    }
+  }
+  &__sidebar {
+    @include dflex();
+    flex-direction: column;
+    flex: 1;
+    gap: 16px;
+    position: sticky;
+    right: 0;
+    top: 120px;
+    .logo {
+      background-color: $blue;
+      border-radius: 8px;
+      padding: 4px 0;
+      width: 113px;
+    }
+    h4 {
+      @include font($black, 16px, 700, $fontDM);
+    }
+    @include maxquery(mobile) {
+      width: 100%;
+    }
+  }
+  &__twt {
+    &__img {
+      width: 415px;
+      @include maxquery(mobile) {
+        width: 100%;
+      }    
+    }
+  }
+
+  @include maxquery(tablet) {
+    flex-direction: column;
+    align-items: center;
+    &__section {
+      .news__cards {
+        @include dgrid(1);
+        .card {
+          flex-direction: unset;
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  @include maxquery(mobile) {
+    flex-direction: column;
+  }
+}

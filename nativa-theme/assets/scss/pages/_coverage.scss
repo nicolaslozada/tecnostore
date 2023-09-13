@@ -1,0 +1,90 @@
+@use '../utilities/mixins' as *;
+
+.coverage {
+  &__title {
+    @include dflex(flex-start);
+    flex-direction: column;
+    gap: 24px;
+    h3 {
+      @include font($black, 48px, 700, $fontDM);
+      @include maxquery(mobile) {
+        font-size: 28px;
+      }
+    }
+    p {
+      @include font($black, 19px, 400, $fontDM);
+    }
+  }
+  &__content {
+    @include dflex(flex-start);
+    flex-direction: column;
+    gap: 64px;
+    width: 100%;
+    @include maxquery(tablet) {
+      gap: 32px;
+    }
+  }
+}
+
+.command {
+  @include dflex(center, space-between);
+  background-color: #F4F4F4;
+  border-radius: 16px;
+  padding: 16px;
+  gap: 16px;
+  &__content {
+    @include dflex(flex-start);
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+  }
+  &__title {
+    @include font($black, 23px, 700, $fontDM);
+  }
+  &__group {
+    @include dgrid(2);
+    gap: 8px;
+    width: 100%;
+    @include maxquery(tablet) {
+      @include dgrid(1);
+    }
+  }
+
+  &__icon {
+    @include img(64px);
+    max-width: 64px;
+    height: 64px;
+    flex: 1;
+    img {
+      @include img();
+    }
+  }
+  &__name {
+    @include dflex(flex-start);
+    gap: 8px;
+    flex-direction: column;
+    flex: 6;
+    h4 {
+      @include font($black, 16px, 700, $fontDM);
+      @include ellipsis(1);
+    }
+    p {
+      @include font(#6B6B6B, 13px, 400, $fontDM);
+      @include ellipsis(1);
+    }
+    @include maxquery(mobile) {
+      flex: 2;
+      p {
+        @include ellipsis(3);
+      }
+    }
+  }
+  &__number {
+    @include font($black, 19px, 700, $fontDM);
+    flex: 2;
+    text-align: center;
+    @include maxquery(mobile) {
+      flex: 1;
+    }
+  }
+}

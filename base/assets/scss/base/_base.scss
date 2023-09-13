@@ -1,0 +1,98 @@
+/* Base */
+@use '../utilities/mixins' as *;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  line-height: 1.5;
+}
+
+body {
+  font-family: $fontInter;
+  font-size: 14px;
+  position: relative;
+  &.block {
+    overflow: hidden;
+  }
+}
+
+section {
+  padding: 30px 0;
+  @include maxquery(mobile) {
+    padding: 30px 0;
+  }
+}
+
+p {
+  color: #444;
+  line-height: 1.5;
+  font-size: 16px;
+  @include maxquery(mobile) {
+    font-size: 14px;
+  }
+}
+
+.container {
+  @include dflex(flex-start);
+  flex-direction: column;
+  gap: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  @include maxquery(tablet) {
+    width: calc(100% - 64px);
+  }
+  @include maxquery(mobile) {
+    width: calc(100% - 32px);
+  }
+}
+
+.row {
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -0.5rem;
+  margin-left: -0.5rem;
+  margin-top: -0.5rem;
+  position: relative;
+}
+
+$col: 12;
+
+@for $i from 1 through $col {
+  .col--#{$i} {
+    width: calc(100% / $i);
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    padding: 0.5rem;
+    @media only screen and (max-width: 40em) {
+      width: 100%;
+    }
+  }
+}
+
+.line {
+  border: none;
+  border-top: 1px solid;
+  margin-top: 32px;
+}
+
+.description {
+  text-align: justify; 
+  @include font($gray, 16px, 400, $fontInter);
+  ul {
+    list-style-position: outside;
+    padding-inline-start: 30px;
+    margin-top: 20px;
+    li {
+      color: $blue;
+      a {
+        @include font($blue, 16px, 400, $fontInter);
+        text-decoration: none;
+      }
+    }
+  }
+}

@@ -1,0 +1,58 @@
+@use '../utilities/mixins' as *;
+
+.section {
+  &--blue {
+    @include maxquery(mobile) {
+      .news__cards {
+        .card {
+          width: 100%;
+        }
+      }
+    }
+  }
+  &--block {
+    .container {
+      @include dflex(flex-start);
+      flex-direction: column;
+      gap: 48px;
+      padding: 48px 0;
+    }
+  }
+  &--tab {
+    .container {
+      @include dflex(flex-start);
+      gap: 24px;
+      flex-direction: column;
+    }
+  }
+  &--page {
+    padding: 64px 0;
+    .container {
+      @include dflex(flex-start);
+      flex-direction: column;
+      gap: 64px;
+      @include maxquery(tablet) {
+        gap: 32px;
+      }
+    }
+  }
+  &--live {
+    background-color: #140036;
+    padding: 64px 0;
+  }
+
+  &--featured {
+    .container {
+      align-items: center;
+    }
+  }
+
+  @include maxquery(mobile) {
+    &--live {
+      padding: 32px 0;
+    }
+    &--block {
+      padding: 0;
+    }
+  }
+}

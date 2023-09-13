@@ -1,0 +1,33 @@
+@use '../utilities/mixins' as *;
+
+.breadcrumbs {
+  @include dflex(center, flex-start);
+  gap: 8px;
+  a {
+    text-decoration: none;
+  }
+  &--home {
+    @include img(24px);
+    img {
+      @include img();
+    }
+  }
+  &--category {
+    @include font($lila, 13px, 700, $fontDM);
+    display: block;
+  }
+  &--single {
+    @include font(#6B6B6B, 13px, 700, $fontDM);
+  }
+  &--arrow {
+    @include dflex(center, center);
+    color: $skyblue2;
+    font-weight: bold;
+    height: 16px;
+    width: 16px;
+    i {
+      font-size: 12px;
+      font-weight: bold;
+    }
+  }
+}

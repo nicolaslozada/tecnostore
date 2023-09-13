@@ -1,0 +1,157 @@
+@use '../utilities/mixins' as *;
+
+.tab {
+  @include dflex(flex-start);
+  flex-direction: column;
+  gap: 30px 16px;
+  width: 100%;
+  &:not(.tab--vertical) {
+    .tab {
+      &__head {
+        @include dflex(flex-start, flex-start);
+        border-bottom: 1px solid $gray4;
+        gap: 8px 0;
+        width: 100%;
+        @include maxquery(tablet) {
+          overflow-y: auto;
+          min-height: 54px;
+        }
+      }
+      &__item {
+        @include font($black, 16px, 700, $fontDM);
+        border-bottom: 2px solid transparent;
+        display: inline-block;
+        margin-bottom: -1px;
+        padding: 16px;
+        text-decoration: none;
+        transition: all 0.5s ease;
+        &.active,
+        &:hover {
+          border-bottom-color: $yellow;
+        }
+        @include maxquery(mobile) {
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+
+  &__wrapper {
+    @include maxquery(mobile) {
+      .block {
+        &:first-child {
+          flex-direction: column-reverse
+        }
+        &:last-child {
+          flex-direction: column
+        }
+      }
+    }
+  }
+
+  &--vertical {
+    @include dflex(flex-start, flex-start);
+    gap: 16px;
+    .tab {
+      &__title {
+        @include font($gray, 28px, 700, $fontDM);
+        order: 2;
+        @include minquery(desktop) {
+          display: none;
+        }
+      }
+      &__head {
+        @include dflex(flex-start, flex-start);
+        flex-direction: column;
+        gap: 24px;
+        flex: 1;
+        width: 100%;
+        &__item {
+          @include dflex(flex-start, flex-start);
+          flex-direction: column;
+          gap: 8px;
+          @include maxquery(mobile) {
+            flex-direction: row;
+            max-width: 100%;
+            overflow-y: auto;
+            padding-bottom: 16px;
+            order: 3;
+          }
+        }
+        .shared {
+          @include maxquery(mobile) {
+            order: 1;
+            width: 100%;
+            &__text {
+              width: 100%;
+            }
+          }
+        }
+      }
+      &__item {
+        @include font($gray, 16px, 700, $fontDM);
+        background-color: $white;
+        display: block;
+        text-decoration: none;
+        border-radius: 16px;
+        padding: 16px;
+        transition: all 0.5s ease;
+        &.active,
+        &:hover {
+          background-color: $blue;
+          color: $white;
+        }
+        @include maxquery(mobile) {
+          white-space: nowrap;
+        }
+      }
+      &__wrapper {
+        flex: 3.1;
+        @include minquery(desktop) {
+          border-left: 1px solid $gray4;
+          padding: 0 0 0 24px;
+        }
+        &__content {
+          flex-direction: column;
+          gap: 24px;
+          display: none;
+          .block {
+            gap: 16px;
+            &__img {
+              flex: 1;
+              @include maxquery(mobile) {
+                width: 100%;
+              }
+            }
+            &__title {
+              font-size: 23px;
+            }
+            &__description {
+              @include ellipsis(5);
+            }
+          }
+          &.active {
+            @include dflex(flex-start, flex-start);
+          }
+          @include maxquery(mobile) {
+            .block {
+              &:first-child {
+                flex-direction: column;
+              }
+            }
+          }
+        }
+      }
+    }
+    @include maxquery(mobile) {
+      flex-direction: column;
+    }
+  }
+
+  @include maxquery(tablet) {
+    &__item {
+      white-space: nowrap;
+    }
+  }
+}
+

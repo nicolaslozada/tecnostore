@@ -1,0 +1,74 @@
+@use '../utilities/mixins' as *;
+
+.block {
+  @include dflex(flex-start, flex-start);
+  gap: 16px;
+  &__img {
+    @include img(388px);
+    border-radius: 8px;
+    height: 304px;
+    overflow: hidden;
+    text-decoration: none;
+    img {
+      @include img();
+      @include object();
+      height: 100%;
+    }
+  }
+  &__content {
+    @include dflex(flex-start, flex-start);
+    flex-direction: column;
+    gap: 8px;
+    padding: 8px;
+    flex: 1;
+  }
+  &__title {
+    @include font($gray, 23px, 700, $fontDM);
+    display: block;
+    text-decoration: none;
+  }
+  &__description {
+    p {
+      @include font($gray, 16px, 400, $fontDM);
+      @include ellipsis(6);
+      margin-top: 8px;
+      line-height: 1.4;
+      // color: $white;
+      @include maxquery(mobile) {
+        display: none;
+      }
+    }
+    b {
+      color: $blue;
+    }
+  }
+
+  &--principal {
+    @extend .block;
+    .block {
+      &__img {
+        @include img(348px);
+        height: 320px;
+      }
+    }
+  }
+
+  &--simple {
+    .block {
+      &:last-child {
+        margin-bottom: 0;
+      }
+      &__img {
+        @include img(388px);
+        height: 304px;
+      }
+    }
+  }
+
+  @include maxquery(mobile) {
+    flex-direction: column;
+    // &:last-child {
+    //   flex-direction: column-reverse;
+    // }
+  }
+}

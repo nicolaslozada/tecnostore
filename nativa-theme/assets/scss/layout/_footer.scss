@@ -1,0 +1,61 @@
+@use '../utilities/mixins' as *;
+
+.footer {
+  &__content {
+    @include dflex(flex-start);
+    gap: 40px 16px;
+    margin: 48px 0;
+    @include maxquery (tablet) {
+      @include dgrid(2);
+    }
+    @include maxquery(mobile) {
+      @include dgrid(1);
+      margin: 24px 0;
+      .rrss--blue {
+        display: flex;
+        margin: 16px 0;
+      }
+    }
+  }
+  &__item {
+    flex: 1;
+  }
+  &__menu {
+    a {
+      @include font($black, 14px, 400, $fontDM);
+      display: block;
+      text-decoration: none;
+    }
+  }
+  &__news {
+    &__title {
+      @include font($black, 16px, 700, $fontDM);
+      margin-bottom: 16px;
+    }
+    &__list {
+      @include dflex();
+      flex-direction: column;
+      gap: 16px;
+      a {
+        @include font($black, 16px, 700, $fontDM);
+        text-decoration: none;
+      }
+    }
+  }
+  &__section {
+    @include dflex(flex-start);
+    flex-direction: column;
+    gap: 16px;
+    a {
+      @include font(#140068, 16px, 700, $fontDM);
+      text-decoration: none;
+    }
+  }
+}
+
+.email {
+  @include font($black, 14px, 400, $fontDM);
+  display: block;
+  margin-bottom: 16px;
+  text-decoration: none;
+}

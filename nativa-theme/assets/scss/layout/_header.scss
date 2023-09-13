@@ -1,0 +1,210 @@
+@use '../utilities/mixins' as *;
+
+.header {
+  &__first {
+    @include dflex(center, center);
+    width: 100%;
+    gap: 24px;
+  }
+  &__last {
+    @include dflex(center, space-between);
+    gap: 64px;
+    width: 100%;
+  }
+
+  &__left {
+    @include dflex(center);
+    gap: 24px;
+    .logo {
+      @include img(136px);
+    }
+  }
+  
+  &__right {
+    @include dflex(center);
+    gap: 64px;
+  }
+
+  &--interna {
+    padding: 16px 0;
+    .container {
+      @include dflex(center);
+      max-width: calc(100% - 64px);
+      flex-direction: unset
+    }
+  }
+  @include maxquery(tablet) {
+    &__first {
+      justify-content: flex-start;
+    }
+    &__last {
+      gap: 24px;
+      justify-content: flex-end;
+    }
+  }
+  @include maxquery(mobile) {
+    &__first {
+      .live {
+        display: none;
+      }
+    }
+  }
+}
+
+.dropdown {
+  position: relative;
+  &__head {
+    @include dflex(flex-start);
+    @include font(#F2F2F2, 16px, 700, $fontDM);
+    cursor: pointer;
+    gap: 8px;
+    @include minquery(desktop-xs) {
+      display: none;
+    }
+    i {
+      color: #06C3FE;
+    }
+  }
+  &__list {
+    a {
+      @include font($black, 16px, 400, $fontDM);
+      text-decoration: none;
+    }
+    &.active {
+      display: flex;
+    }
+    @include maxquery(tablet) {
+      @include dflex(flex-start);
+      background-color: $white;
+      border-radius: 16px;
+      flex-direction: column;
+      gap: 8px;
+      padding: 16px;
+      position: absolute;
+      right: 0;
+      top: 30px;
+      display: none;
+    }
+    @include minquery(desktop-xs) {
+      @include dflex(flex-start);
+      gap: 32px;
+      a {
+        @include font($white, 16px, 700, $fontDM);
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+header {
+  background-color: $blue;
+  padding: 64px 0 0 0;
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  .container {
+    @include dflex(center, space-between);
+    transition: all 0.5s ease;
+    @include maxquery(mobile) {
+      max-width: calc(100% - 48px);
+    }
+    @include maxquery(tablet) {
+      flex-direction: unset;
+    }
+  }
+  &.active {
+    padding: 16px 0;
+  }
+  @include maxquery(tablet) {
+    padding: 8px 0;
+    &.active {
+      padding: 8px 0;
+    }
+  }
+  @include minquery(desktop-xs) {
+    &.active {
+      .container {
+        flex-direction: unset;
+        transition: all 0.5s ease;
+      }
+      .dropdown {
+        &__head {
+          display: flex;
+        }
+        &__list {
+          @include dflex(flex-start);
+          background-color: $white;
+          border-radius: 16px;
+          flex-direction: column;
+          gap: 8px;
+          padding: 16px;
+          position: absolute;
+          right: 0;
+          top: 30px;
+          display: none;
+          a {
+            color: $black;
+          }
+          &.active {
+            display: flex;
+          }
+        }
+      }
+      .header {
+        &__first {
+          justify-content: flex-start;
+        }
+        &__last {
+          justify-content: flex-end;
+        }
+      }
+      .logo {
+        width: 136px;
+      }
+    }
+  }
+}
+
+.rrss {
+  @include dflex(center, center);
+  gap: 16px;
+  a {
+    color: $white;
+    font-size: 24px;
+  }
+  &--blue {
+    @extend .rrss;
+    justify-content: flex-start;
+    margin: 24px 0;
+    a {
+      color: $blue;
+    }
+  }
+  @include maxquery(mobile) {
+    display: none;
+  }
+}
+
+.logo {
+  @include img(193px);
+  img {
+    @include img();
+  }
+  @include maxquery(tablet) {
+    @include img(136px);
+  }
+}
+
+// .menu {
+//   @include dflex(center, center);
+//   gap: 32px;
+//   a {
+//     @include font($white, 16px, 700, $fontDM);
+//     text-decoration: none;
+//     padding: 12px;
+//   }
+//   @include maxquery(tablet) {
+//     display: none;
+//   }
+// }
