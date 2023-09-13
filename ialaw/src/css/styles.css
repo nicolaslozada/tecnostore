@@ -560,7 +560,7 @@ section.services{
     margin-top: 24px;
 }
 
-.team-intro--left > p {
+.team-intro--right > p {
     margin-bottom: 16px;
 }
 
@@ -661,11 +661,11 @@ h3.services-page__item__title{
         grid-template-columns: 1fr ;
     }
     .team-intro--left{
-        order: 2;
+        order: 1;
     }
 
     .team-intro--right{
-        order: 1;
+        order: 2;
     }
   }  
 
